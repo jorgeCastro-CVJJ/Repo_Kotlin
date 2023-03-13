@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Platzi_Curso_Arquitectura</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_Password">Password</string>
+</resources>
