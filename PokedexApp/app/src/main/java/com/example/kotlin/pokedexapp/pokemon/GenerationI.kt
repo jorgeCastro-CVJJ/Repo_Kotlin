@@ -1,6 +1,8 @@
 package com.example.kotlin.pokedexapp.pokemon
 
+import com.google.gson.annotations.SerializedName
+
 data class GenerationI(
-    val red-blue: RedBlue,
+    @SerializedName("red-blue") val red_blue: RedBlue,
     val yellow: Yellow
 )
