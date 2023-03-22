@@ -1,5 +1,6 @@
 package com.example.kotlin.pokedexapp
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,9 +10,11 @@ import com.example.kotlin.pokedexapp.pokemon.Pokemon
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
     var data: ArrayList<PokemonBase> = ArrayList()
+    lateinit var context: Context
 
-    fun PokemonAdapter(basicData: ArrayList<PokemonBase>) {
+    fun PokemonAdapter(basicData: ArrayList<PokemonBase>,context: Context) {
         this.data = basicData
+        this.context = context
     }
 
     // Le dice al RecyclerView que layout vamos a utilizar, e igualmente observa que utilizamos
@@ -27,7 +30,7 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
     // vemos con el elemento correspondiente
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         val item = data[position]
-        holder.bind(item)
+        holder.bind(item,context)
     }
 
     // Regresa la cantidad de datos de la lista !IMPORTANT para utilizar RecyclerView y optimizar
